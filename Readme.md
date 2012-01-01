@@ -29,7 +29,7 @@ It will create a temporary file/directory with a unique name.
 	file.unlink();
 	dir.rmdir();
 
-## Mehtods
+## Methods
 
 ### File
 
