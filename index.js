@@ -8,7 +8,7 @@
 /**
  * Dependencies.
  */
-var package = require('package')();
+var package = require('package')(module);
 
 /**
  * Version.
