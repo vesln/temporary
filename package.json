@@ -1,11 +1,11 @@
 {
     "name": "temporary"
-  , "version": "0.0.1"
+  , "version": "0.0.2"
   , "description": "The lord of tmp."
   , "keywords": ["tmp", "temp", "tempfile", "tempdirectory"]
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "dependencies": {
-	  "package": "0.0.3"
+	  "package": "1.0.0"
   }
   , "devDependencies": {
       "mocha": "0.3.3"
