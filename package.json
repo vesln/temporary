@@ -9,7 +9,7 @@
   }
   , "devDependencies": {
       "mocha": "1.2.x"
-    , "should": "0.3.2"
+    , "chai": "*"
     , "sinon": "1.2.0"
   }
   , "repository" : {
