@@ -12,6 +12,7 @@ var path = require('path');
 var fs = require('fs');
 var Tempfile = require('../lib/file');
 var sinon = require('sinon');
+var should = require('chai').should();
 
 describe('Tempfile', function() {
   it('should create file', function() {

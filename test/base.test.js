@@ -12,6 +12,7 @@ var path = require('path');
 var fs = require('fs');
 var Base = require('../lib/base');
 var generator = require('../lib/generator');
+var should = require('chai').should();
 
 Base.prototype.create = function() {};
 
