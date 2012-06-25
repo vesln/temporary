@@ -1,10 +1,10 @@
 /**
  * Temporary - The lord of tmp.
- * 
+ *
  * Author: Veselin Todorov <hi@vesln.com>
  * Licensed under the MIT License.
  */
- 
+
 /**
  * Dependencies.
  */
@@ -16,9 +16,9 @@ var sinon = require('sinon');
 describe('Tempdir', function() {
   it('should create file', function() {
     var tmp = new Tempdir('foo');
-    path.existsSync(tmp.path).should.be.ok;
+    fs.existsSync(tmp.path).should.be.ok;
   });
-  
+
   describe('rmdir', function() {
     it('should remove the directory', function() {
       var tmp = new Tempdir('foo');
@@ -28,7 +28,7 @@ describe('Tempdir', function() {
       fs.rmdir.restore();
     });
   });
-  
+
   describe('rmdirSync', function() {
     it('should remove the directory', function() {
       var tmp = new Tempdir('foo');

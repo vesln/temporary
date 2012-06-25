@@ -1,10 +1,10 @@
 /**
  * Temporary - The lord of tmp.
- * 
+ *
  * Author: Veselin Todorov <hi@vesln.com>
  * Licensed under the MIT License.
  */
- 
+
 /**
  * Dependencies.
  */
@@ -16,9 +16,9 @@ var sinon = require('sinon');
 describe('Tempfile', function() {
   it('should create file', function() {
     var tmp = new Tempfile('foo');
-    path.existsSync(tmp.path).should.be.ok;
+    fs.existsSync(tmp.path).should.be.ok;
   });
-  
+
   describe('readFile', function() {
     it('should call fs.readfile', function() {
       sinon.spy(fs, 'readFile');
@@ -28,7 +28,7 @@ describe('Tempfile', function() {
       fs.readFile.restore();
     });
   });
-  
+
   describe('readFileSync', function() {
     it('should call fs.readfileSync', function() {
       sinon.spy(fs, 'readFileSync');
@@ -38,7 +38,7 @@ describe('Tempfile', function() {
       fs.readFileSync.restore();
     });
   });
-  
+
   describe('writeFile', function() {
     it('should call fs.readfile', function() {
       sinon.spy(fs, 'writeFile');
@@ -58,7 +58,7 @@ describe('Tempfile', function() {
       fs.writeFileSync.restore();
     });
   });
-  
+
   describe('open', function() {
     it('should call fs.open', function() {
       sinon.spy(fs, 'open');
@@ -78,7 +78,7 @@ describe('Tempfile', function() {
       fs.openSync.restore();
     });
   });
-  
+
   describe('close', function() {
     it('should call fs.close', function() {
       sinon.spy(fs, 'close');
@@ -100,7 +100,7 @@ describe('Tempfile', function() {
       fs.closeSync.restore();
     });
   });
-  
+
   describe('unlink', function() {
     it('should call fs.unlink', function() {
       sinon.spy(fs, 'unlink');
