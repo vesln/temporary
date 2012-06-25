@@ -13,6 +13,8 @@ var fs = require('fs');
 var Base = require('../lib/base');
 var generator = require('../lib/generator');
 
+var existsSync = fs.existsSync || path.existsSync;
+
 Base.prototype.create = function() {};
 
 describe('Base', function() {
@@ -21,9 +23,9 @@ describe('Base', function() {
       var tmp = new Base;
       tmp.path = generator.build();
       fs.mkdirSync(path.normalize(tmp.path), 0777);
-      fs.existsSync(tmp.path).should.be.ok;
+      existsSync(tmp.path).should.be.ok;
       tmp.rename('foo', function(err) {
-        fs.existsSync(tmp.path).should.be.ok;
+        existsSync(tmp.path).should.be.ok;
         done();
       });
     });
@@ -35,9 +37,9 @@ describe('Base', function() {
       tmp.path = generator.build();
       fs.mkdirSync(path.normalize(tmp.path), 0777);
       var oldPath = tmp.path;
-      fs.existsSync(tmp.path).should.be.ok;
+      existsSync(tmp.path).should.be.ok;
       tmp.renameSync('foo3');
-      fs.existsSync(tmp.path).should.be.ok;
+      existsSync(tmp.path).should.be.ok;
       path.should.not.eql(oldPath);
     });
   });

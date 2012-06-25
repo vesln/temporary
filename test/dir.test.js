@@ -13,10 +13,12 @@ var fs = require('fs');
 var Tempdir = require('../lib/dir');
 var sinon = require('sinon');
 
+var existsSync = fs.existsSync || path.existsSync;
+
 describe('Tempdir', function() {
   it('should create file', function() {
     var tmp = new Tempdir('foo');
-    fs.existsSync(tmp.path).should.be.ok;
+    existsSync(tmp.path).should.be.ok;
   });
 
   describe('rmdir', function() {

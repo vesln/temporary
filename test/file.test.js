@@ -13,10 +13,12 @@ var fs = require('fs');
 var Tempfile = require('../lib/file');
 var sinon = require('sinon');
 
+var existsSync = fs.existsSync || path.existsSync;
+
 describe('Tempfile', function() {
   it('should create file', function() {
     var tmp = new Tempfile('foo');
-    fs.existsSync(tmp.path).should.be.ok;
+    existsSync(tmp.path).should.be.ok;
   });
 
   describe('readFile', function() {
