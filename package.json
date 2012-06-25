@@ -1,6 +1,6 @@
 {
     "name": "temporary"
-  , "version": "0.0.3"
+  , "version": "0.0.4"
   , "description": "The lord of tmp."
   , "keywords": ["tmp", "temp", "tempfile", "tempdirectory"]
   , "author": "Veselin Todorov <hi@vesln.com>"
