@@ -5,7 +5,7 @@
   , "keywords": ["tmp", "temp", "tempfile", "tempdirectory"]
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "dependencies": {
-	  "package": "1.0.0"
+	  "package": ">= 1.0.0 < 1.2.0"
   }
   , "devDependencies": {
       "mocha": "0.3.3"
