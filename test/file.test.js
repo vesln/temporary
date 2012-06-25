@@ -10,6 +10,8 @@
  */
 var path = require('path');
 var fs = require('fs');
+var existsSync = fs.existsSync || path.existsSync;
+
 var Tempfile = require('../lib/file');
 var sinon = require('sinon');
 var should = require('chai').should();
@@ -17,7 +19,7 @@ var should = require('chai').should();
 describe('Tempfile', function() {
   it('should create file', function() {
     var tmp = new Tempfile('foo');
-    fs.existsSync(tmp.path).should.be.ok;
+    existsSync(tmp.path).should.be.ok;
   });
 
   describe('readFile', function() {
