@@ -1,10 +1,10 @@
 /**
  * Temporary - The lord of tmp.
- * 
+ *
  * Author: Veselin Todorov <hi@vesln.com>
  * Licensed under the MIT License.
  */
- 
+
 /**
  * Dependencies.
  */
@@ -21,27 +21,27 @@ describe('Base', function() {
       var tmp = new Base;
       tmp.path = generator.build();
       fs.mkdirSync(path.normalize(tmp.path), 0777);
-      path.existsSync(tmp.path).should.be.ok;
+      fs.existsSync(tmp.path).should.be.ok;
       tmp.rename('foo', function(err) {
-        path.existsSync(tmp.path).should.be.ok;
+        fs.existsSync(tmp.path).should.be.ok;
         done();
       });
     });
   });
-  
+
   describe('renameSync', function() {
     it('should rename the directory', function() {
       var tmp = new Base('foo');
       tmp.path = generator.build();
       fs.mkdirSync(path.normalize(tmp.path), 0777);
       var oldPath = tmp.path;
-      path.existsSync(tmp.path).should.be.ok;
+      fs.existsSync(tmp.path).should.be.ok;
       tmp.renameSync('foo3');
-      path.existsSync(tmp.path).should.be.ok;
+      fs.existsSync(tmp.path).should.be.ok;
       path.should.not.eql(oldPath);
     });
   });
-  
+
   describe('prepareArgs', function() {
     it('should convert object to array and append path as first element', function() {
       var tmp = new Base('foo');
