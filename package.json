@@ -8,9 +8,9 @@
 	  "package": ">= 1.0.0 < 1.2.0"
   }
   , "devDependencies": {
-      "mocha": "0.3.3"
-    , "should": "0.3.2"
-    , "sinon": "1.2.0"
+      "mocha": "1.2.x"
+    , "should": "0.6.x"
+    , "sinon": "1.2.x"
   }
   , "repository" : {
       "type" : "git",
