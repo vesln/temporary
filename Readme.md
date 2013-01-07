@@ -18,8 +18,8 @@ It will create a temporary file/directory with a unique name.
 
 ## Usage
 
-	var Tempfile = require('temporary/file');
-	var Tempdir = require('temporary/dir');
+	var Tempfile = require('temporary/lib/file');
+	var Tempdir = require('temporary/lib/dir');
 	var file = new Tempfile;
 	var dir = new Tempdir;
 	
