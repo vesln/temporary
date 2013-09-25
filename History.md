@@ -1,4 +1,10 @@
 
+0.0.7 / 2013-09-25
+==================
+
+  * Normalize windows paths correctly
+  * On Windows lib/detector.js not adding trailing slash when needed.
+
 0.0.6 / 2013-09-13
 ==================
 
