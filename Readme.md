@@ -21,12 +21,34 @@ It will create a temporary file/directory with a unique name.
 	var tmp = require('temporary');
 	var file = new tmp.File();
 	var dir = new tmp.Dir();
-	
+
 	console.log(file.path); // path.
 	console.log(dir.path); // path.
-	
+
 	file.unlink();
 	dir.rmdir();
+
+### Custom path
+
+If you want to manually specify the directory name, you can do so by setting the `generator` option to `false`.
+
+```js
+var tmp = require('temporary');
+
+var dir = new tmp.Dir('foobar', { generator: false });
+
+console.log(dir.path) // prints 'foobar'
+```
+
+### Custom generator
+
+Generators allow you to specify how the directory or file names get generated.
+
+```js
+var tmp = require('temporary');
+
+var dir = new tmp.Dir('foobar', { generator: function() {} });
+```
 
 ## Methods
 

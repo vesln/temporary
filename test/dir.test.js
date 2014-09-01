@@ -14,12 +14,35 @@ var existsSync = fs.existsSync || path.existsSync;
 
 var Tempdir = require('../lib/dir');
 var sinon = require('sinon');
-var should = require('chai').should();
+
+require('chai').should();
 
 describe('Tempdir', function() {
   it('should create file', function() {
     var tmp = new Tempdir('foo');
     existsSync(tmp.path).should.be.ok;
+  });
+
+  it('should use the directory name as the path when generator option equals false', function () {
+    var tmp = new Tempdir('foo', {
+      generator: false
+    });
+
+    existsSync(tmp.path).should.be.ok;
+
+    (tmp.path).should.be.equal('foo');
+    tmp.rmdirSync();
+  });
+
+  it('should use the custom generator if supplied', function() {
+    var spy = sinon.spy(function(name) { return name; });
+
+    var tmp = new Tempdir('foo', {
+      generator: spy
+    });
+
+    (spy.called).should.be.ok;
+    tmp.rmdirSync();
   });
 
   describe('rmdir', function() {
