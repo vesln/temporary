@@ -6,7 +6,8 @@
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "license": "MIT"
   , "dependencies": {
-    "package": ">= 1.0.0 < 1.2.0"
+     "read-package-json": "^2.0.12"
+
   }
   , "devDependencies": {
       "mocha": "1.2.x"
