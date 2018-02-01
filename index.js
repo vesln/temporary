@@ -1,6 +1,6 @@
 /**
  * Temporary - The lord of tmp.
- * 
+ *
  * Author: Veselin Todorov <hi@vesln.com>
  * Licensed under the MIT License.
  */
@@ -8,7 +8,7 @@
 /**
  * Dependencies.
  */
-var package = require('package')(module);
+var package = require('./package.json');
 
 /**
  * Version.

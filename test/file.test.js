@@ -26,7 +26,7 @@ describe('Tempfile', function() {
     it('should call fs.readfile', function() {
       sinon.spy(fs, 'readFile');
       var tmp = new Tempfile;
-      tmp.readFile();
+      tmp.readFile(function(){});
       fs.readFile.getCall(0).args[0].should.eql(tmp.path);
       fs.readFile.restore();
     });
@@ -46,7 +46,7 @@ describe('Tempfile', function() {
     it('should call fs.readfile', function() {
       sinon.spy(fs, 'writeFile');
       var tmp = new Tempfile;
-      tmp.writeFile();
+      tmp.writeFile('test.txt', {}, function(){});
       fs.writeFile.getCall(0).args[0].should.eql(tmp.path);
       fs.writeFile.restore();
     });
@@ -66,7 +66,7 @@ describe('Tempfile', function() {
     it('should call fs.open', function() {
       sinon.spy(fs, 'open');
       var tmp = new Tempfile;
-      tmp.open('r');
+      tmp.open('r', function(){});
       fs.open.getCall(0).args[0].should.eql(tmp.path);
       fs.open.restore();
     });
@@ -87,7 +87,7 @@ describe('Tempfile', function() {
       sinon.spy(fs, 'close');
       var tmp = new Tempfile;
       var fd = tmp.openSync('r');
-      tmp.close(fd);
+      tmp.close(fd, function(){});
       fs.close.getCall(0).args[0].should.eql(fd);
       fs.close.restore();
     });
@@ -108,7 +108,7 @@ describe('Tempfile', function() {
     it('should call fs.unlink', function() {
       sinon.spy(fs, 'unlink');
       var tmp = new Tempfile;
-      tmp.unlink();
+      tmp.unlink(function(){});
       fs.unlink.getCall(0).args[0].should.eql(tmp.path);
       fs.unlink.restore();
     });

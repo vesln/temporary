@@ -49,7 +49,7 @@ describe('Tempdir', function() {
     it('should remove the directory', function() {
       var tmp = new Tempdir('foo');
       sinon.spy(fs, 'rmdir');
-      tmp.rmdir();
+      tmp.rmdir(function(){});
       fs.rmdir.getCall(0).args[0].should.eql(tmp.path);
       fs.rmdir.restore();
     });
