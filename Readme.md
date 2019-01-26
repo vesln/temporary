@@ -78,6 +78,8 @@ var dir = new tmp.Dir('foobar', { generator: function() {} });
 
 Bug fixes and features are welcomed.
 
+Current maintainer: @willscott
+
 ## License
 
 MIT License
