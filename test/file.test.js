@@ -46,7 +46,7 @@ describe('Tempfile', function() {
     it('should call fs.readfile', function() {
       sinon.spy(fs, 'writeFile');
       var tmp = new Tempfile;
-      tmp.writeFile('test.txt', {}, function() {});
+      tmp.writeFile({}, function() {});
       fs.writeFile.getCall(0).args[0].should.eql(tmp.path);
       fs.writeFile.restore();
     });
