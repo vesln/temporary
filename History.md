@@ -1,3 +1,12 @@
+1.1.0 / 2020-05-13
+
+  * More strict default permissions.
+
+1.0.1 / 2019-05-24
+==================
+
+  * Fix bug in default arguments to writeFile.
+
 1.0.0 / 2019-01-24
 ==================
 
